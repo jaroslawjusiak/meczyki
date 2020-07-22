@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
 import Layout from './hoc/Layout/Layout';
+import classes from './App.module.css';
 
 
 function App(props) {
 
   return(
-    <div>
+    <div className={classes.reset}>
       <Layout>
         {/* Routes to be added here! */}
       </Layout>
