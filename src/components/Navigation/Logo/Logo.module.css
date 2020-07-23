@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #e3ebf5;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    font-size: 1.6em;
+    font-family: 'Mulish', sans-serif;    
+}
+
+.logo img {
+    height: 6vh;
+    margin-right: 10px;
+}
+
+.title {
+    height: 100%;
+}
