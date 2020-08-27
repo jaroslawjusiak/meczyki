@@ -1,40 +1,25 @@
 .navItems {
     display: flex;
-    justify-content: space-around;
-    width: 70%;
+    justify-content: space-around;    
+    
+    width: 85%;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     body{
         overflow-x: hidden;
     }
 
-    .navItems {
+    /* TODO: Set all following navItem properties as a target of transition triggered on hamburger click */
+    /* .navItems {
         position: absolute;
         right: 0px;
-        top: 8vh;
+        top: 6vh;
         height: 92vh;
         background-color: #178dd1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 40%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }    
-}
-
-.navItemsActive {
-    transform: translateX(0%);
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
+        width: 30%;
+    }     */
 }

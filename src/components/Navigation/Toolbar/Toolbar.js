@@ -8,8 +8,9 @@ const toolbar = (props) => {
     return (
         <nav className={classes.toolbar}>
             <Logo/>
-            <NavigationItems/>
-            <Burger />
+            <NavigationItems />
+            
+            <Burger closeBurger={props.showSideMenu} clicked={props.burgerClicked}/>
         </nav>
     );
 };
