@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaQuery from 'react-responsive'
+import MediaQuery from 'react-responsive';
 import classes from './Toolbar.module.css';
 import Logo from '../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
@@ -25,7 +25,7 @@ const toolbar = (props) => {
             <MediaQuery maxWidth={1000} onChange={handleNavMediaQueryChange}>
                     {(matches) =>
                         matches
-                        ? <SideBarItems />
+                        ? <SideBarItems visible={props.showSideMenu}/>
                         : <NavigationItems />
                     }
             </MediaQuery>
