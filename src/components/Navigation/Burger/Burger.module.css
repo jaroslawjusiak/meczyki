@@ -1,5 +1,6 @@
 .burger {
-    display: none;
+    display: block;
+        cursor: pointer;
 }
 
 .burger-div {
@@ -10,23 +11,3 @@
     border-radius: 5px;
     
 }
-
-@media screen and (max-width: 1000px){
-    .burger {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-
-/* .toggle .line1 {
-    transform: rotate(-45deg) translate(-10px, 6px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(45deg) translate(-10px, -6px);
-} */

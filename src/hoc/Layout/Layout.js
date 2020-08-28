@@ -24,10 +24,15 @@ class Layout extends Component{
         });
     };
 
+    handleMediaQueryChange = (matches) => {
+        console.log('[handleMediaQueryChange] - matches: ', matches);
+    }
+
     render(){
         return (
             <Aux>
-                 <Toolbar burgerClicked={this.burgerClickedHandler} showSideMenu={this.state.showSideMenu}/>
+                <Toolbar burgerClicked={this.burgerClickedHandler} showSideMenu={this.state.showSideMenu}/>
+                
                  {/* <FunctionsTester /> */}
             </Aux>
         );
