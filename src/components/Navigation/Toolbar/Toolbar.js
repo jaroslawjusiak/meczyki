@@ -3,6 +3,7 @@ import MediaQuery from 'react-responsive'
 import classes from './Toolbar.module.css';
 import Logo from '../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import SideBarItems from '../SideBarItems/SideBarItems';
 import Burger from '../Burger/Burger';
 
 const handleBurgerMediaQueryChange = (matches) => {
@@ -11,11 +12,24 @@ const handleBurgerMediaQueryChange = (matches) => {
     : console.log('Hide Burger');
 };
 
+const handleNavMediaQueryChange = (matches) => {
+    matches 
+    ? console.log('Show Nav') 
+    : console.log('Hide Nav');
+};
+
 const toolbar = (props) => {
     return (
         <nav className={classes.toolbar}>
             <Logo/>
-            <NavigationItems />
+            <MediaQuery maxWidth={1000} onChange={handleNavMediaQueryChange}>
+                    {(matches) =>
+                        matches
+                        ? <SideBarItems />
+                        : <NavigationItems />
+                    }
+            </MediaQuery>
+            
             <MediaQuery maxWidth={1000} onChange={handleBurgerMediaQueryChange}>
                     {(matches) =>
                         matches

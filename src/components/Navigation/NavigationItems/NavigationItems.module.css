@@ -1,25 +1,5 @@
 .navItems {
     display: flex;
     justify-content: space-around;    
-    
     width: 85%;
-}
-
-@media screen and (max-width: 1000px){
-    body{
-        overflow-x: hidden;
-    }
-
-    /* TODO: Set all following navItem properties as a target of transition triggered on hamburger click */
-    /* .navItems {
-        position: absolute;
-        right: 0px;
-        top: 6vh;
-        height: 92vh;
-        background-color: #178dd1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-    }     */
 }
