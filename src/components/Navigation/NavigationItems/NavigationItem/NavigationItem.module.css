@@ -2,10 +2,26 @@
     list-style: none;    
 }
 
+
+.navItem div {
+    display: flex;
+    justify-content: left;
+}
+
 .navItem a {
+    position: relative;
     color:#e3ebf5;
     text-decoration: none;
     font-family: 'Mulish','Poppins', sans-serif;
     letter-spacing: 2px;
     font-size: 1em;
+    display: block;
 }
+
+/* .navItem a {
+    color:#e3ebf5;
+    text-decoration: none;
+    font-family: 'Mulish','Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1em;
+} */

@@ -3,7 +3,6 @@ import MediaQuery from 'react-responsive';
 import classes from './Toolbar.module.css';
 import Logo from '../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
-import SideBarItems from '../SideBarItems/SideBarItems';
 import Burger from '../Burger/Burger';
 
 const handleBurgerMediaQueryChange = (matches) => {
@@ -25,8 +24,8 @@ const toolbar = (props) => {
             <MediaQuery maxWidth={1000} onChange={handleNavMediaQueryChange}>
                     {(matches) =>
                         matches
-                        ? <SideBarItems visible={props.showSideMenu}/>
-                        : <NavigationItems />
+                        ? <NavigationItems onToolbar={false} visible={props.showSideMenu}/>
+                        : <NavigationItems onToolbar={true}/>
                     }
             </MediaQuery>
             
