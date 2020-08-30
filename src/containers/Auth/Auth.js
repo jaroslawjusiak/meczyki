@@ -17,7 +17,7 @@ class Auth extends Component{
     render(){
         return (
             <div>
-                 
+                <p>Logowanie</p>
             </div>
         );
     };

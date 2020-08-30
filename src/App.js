@@ -1,9 +1,10 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import asyncComponent from './hoc/asyncComponent/asyncComponent';
+
 import MainPage from './components/MainPage/MainPage';
 import Layout from './hoc/Layout/Layout';
 import classes from './App.module.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
 const asyncAuth = asyncComponent(() => {
   return import('./containers/Auth/Auth');

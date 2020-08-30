@@ -32,7 +32,9 @@ class Layout extends Component{
         return (
             <Aux>
                 <Toolbar burgerClicked={this.burgerClickedHandler} showSideMenu={this.state.showSideMenu}/>
-                
+                <main className={classes.Content}>
+                    {this.props.children}
+                </main>
                  {/* <FunctionsTester /> */}
             </Aux>
         );
