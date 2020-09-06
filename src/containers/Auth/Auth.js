@@ -42,10 +42,10 @@ class Auth extends Component{
         .then(user => {
             console.log('user', user);
             this.setState({ isSignedIn: !!user });
-      })
-      .catch(error => {
-        console.log('error', error);
-      });
+        })
+        .catch(error => {
+            console.log('error', error);
+        });
     };
 
     onLogout = () => {

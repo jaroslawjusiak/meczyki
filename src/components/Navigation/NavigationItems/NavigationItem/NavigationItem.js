@@ -1,18 +1,27 @@
 import React from 'react';
 import { animated, Transition } from 'react-spring/renderprops';
+import {NavLink} from 'react-router-dom';
 import classes from './NavigationItem.module.css';
 
 const navigationItem = (props) => {
     
+    const navLink = (
+        <NavLink 
+            to={props.link} exact                                
+        >
+            {props.text}
+        </NavLink>
+    );
+
     let navItemComponent = 
         <li className={classes.navItem} >
-           {/* NavLinks to be added here! */}
-            <a href="#">{props.text}</a>
+           {navLink}
        </li>;
+
+    console.log(props.link);
 
     if(!props.onToolbar){
         navItemComponent = 
-            <li className={classes.navItem} >
                 <Transition
                     native
                     items={props.visible}
@@ -22,13 +31,11 @@ const navigationItem = (props) => {
                     config={{ duration:300, delay: props.delay }}
                 >
                     {show => show && (style => (
-                        <animated.a href="#" style={style}>
-                                {/* NavLinks to be added here! */}
-                                    {props.text}
-                    </animated.a>
+                        <animated.li style={style} className={classes.navItem}>                            
+                            {navLink}        
+                        </animated.li>
                         ))}
                 </Transition>
-            </li>
     }
     
     return navItemComponent;

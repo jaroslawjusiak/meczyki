@@ -4,14 +4,20 @@ import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = (props) => {
-    const navItems = ["Strona główna", "Logowanie", "Typuj wyniki", "Klasyfikacja typerów"];
+    const navItems = [
+        {link: '/', text: 'Strona główna'},
+        {link: '/auth', text: 'Logowanie'},
+        {link: '/bet', text: 'Obstawiaj wyniki'},
+        {link: '/ranking', text: 'Klasyfikacja typerów'}
+    ];
     let navigationItems = navItems.map( (item, i) => {
         return <NavigationItem 
-                    text={item} 
+                    text={item.text} 
                     onToolbar={props.onToolbar}
                     visible={props.visible}
-                    delay={300 + i * 100}                     
-                    key={item}/>
+                    delay={100 + i * 100}                     
+                    key={item.text}
+                    link={item.link}/>
     });
     
     let navItemsComponent = <ul className={classes.navItems} >
