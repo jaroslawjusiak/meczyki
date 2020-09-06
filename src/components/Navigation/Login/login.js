@@ -1,25 +1,22 @@
 import React from 'react';
 import { animated, Transition } from 'react-spring/renderprops';
-import {NavLink} from 'react-router-dom';
-import classes from './NavigationItem.module.css';
+import classes from './login.module.css';
+import loginSVG from '../../../assets/images/login.svg';
+import logoutSVG from '../../../assets/images/logout.svg';
 
-const navigationItem = (props) => {
+const login = (props) => {
     
-    const navLink = (
-        <NavLink 
-            to={props.link} exact                                
-        >
-            {props.text}
-        </NavLink>
+    let src = (<img src={loginSVG} alt="Login"/>);
+    
+
+    let loginLogout = (
+        <li className={classes.svg}>
+            {src}
+        </li>
     );
 
-    let navItemComponent = 
-        <li className={classes.navItem} >
-           {navLink}
-       </li>;
-
     if(!props.onToolbar){
-        navItemComponent = 
+        loginLogout = 
                 <Transition
                     native
                     items={props.visible}
@@ -29,14 +26,14 @@ const navigationItem = (props) => {
                     config={{ duration:300, delay: props.delay }}
                 >
                     {show => show && (style => (
-                        <animated.li style={style} className={classes.navItem}>                            
-                            {navLink}        
+                        <animated.li style={style} className={classes.svg}>                            
+                            {src}
                         </animated.li>
                         ))}
                 </Transition>
     }
-    
-    return navItemComponent;
+
+    return loginLogout;
 };
 
-export default navigationItem;
+export default login;

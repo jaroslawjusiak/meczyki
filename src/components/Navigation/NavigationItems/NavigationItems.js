@@ -2,6 +2,7 @@ import React from 'react';
 import { animated, Transition } from 'react-spring/renderprops';
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
+import Login from '../Login/login';
 
 const navigationItems = (props) => {
     const navItems = [
@@ -20,8 +21,11 @@ const navigationItems = (props) => {
                     link={item.link}/>
     });
     
+    let login = (<Login onToolbar={props.onToolbar} delay={100 + navItems.length * 100} visible={props.visible}/>);
+
     let navItemsComponent = <ul className={classes.navItems} >
                 {navigationItems}
+                {login}
             </ul>;
     
     if(!props.onToolbar){
@@ -33,10 +37,11 @@ const navigationItems = (props) => {
                 leave={{ right: `${props.visible ? 0 : -500}px` }}
                 config={{ duration:300 }}
             >
-                {show => show && (props => (
-                    <animated.div className={classes['side-bar-items']} style={props}>
+                {show => show && (style => (
+                    <animated.div className={classes['side-bar-items']} style={style}>
                     <ul>
                         {navigationItems}
+                        {login}
                     </ul>
                 </animated.div>
                     ))}
